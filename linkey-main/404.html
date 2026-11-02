@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Linkey — redirecting…</title>
+<meta http-equiv="refresh" content="0;url=#/">
+<script>
+  /* GitHub Pages serves 404.html for any unknown path. A short link like
+     /s/mypage lands here; we bounce it into the SPA hash route so the app
+     can resolve and redirect to the destination. */
+  (function () {
+    var m = location.pathname.match(/^\/s\/([a-zA-Z0-9_-]+)(\/.*)?$/);
+    if (m) {
+      location.replace(location.origin + location.pathname.replace(/\/s\/.*$/, "") + "#/s/" + m[1] + (location.search || ""));
+    }
+  })();
+</script>
